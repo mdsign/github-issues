@@ -1,0 +1,131 @@
+body {
+  background: #ffffff no-repeat center top;  
+  position: relative;
+}
+body::after {
+  content: "";
+  background-image: url(./asset/bg.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: center center;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.l-app-container {
+  overflow: auto;
+  font-size: calc(8px + 2vmin);
+}
+
+.l-app-header {
+  background-color: #38373f;
+  position: fixed;
+  display: flex;  
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;  
+  height: 60px;
+  width: 100%;
+}
+
+.l-app-header > h3 {
+  font: bold 18px/30px "Trebuchet MS", Helvetica, sans-serif;
+  color: #ffffff
+}
+
+.l-issues-wrapper {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, .9);
+}
+
+.l-issue-list-container {
+  border: 1px solid #cccccc;
+  width: 100%;
+  margin: 60px auto 0;
+  border-radius: 3px;
+}
+
+.l-issue-list-header {
+  background: #fafafa;
+  border-bottom: 1px solid #cccccc;
+}
+
+.l-issue-list-header > h5 {
+  margin: 0;
+  padding: 15px;
+  font-size: 20px;
+}
+
+ul {
+  
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  border-bottom: 1px solid #cccccc;
+}
+li:last-child {
+  border-bottom: none;
+}
+li span.l-issue-title {
+  font-size: 14px;
+  color: #000000;
+  line-height: 20px;
+  vertical-align: top;
+  width:80%;
+  font-weight: bold;
+}
+
+li span.l-issue-url {
+  font-size: 12px;
+  font-style: italic;
+  color: #999999;
+  margin: 10px 0 0 35px;
+}
+
+.f-issue-status-open {
+  width: 20px;
+  height: 20px;
+  background-image: url(./asset/issue-open.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-right: 15px;
+}
+
+.f-issue-status-closed {
+  width: 20px;
+  height: 20px;
+  background-image: url(./asset/issue-closed.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-right: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .l-issues-wrapper {
+    padding: 30px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .l-issues-wrapper {
+    width: 992px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+}
