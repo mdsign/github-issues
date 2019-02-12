@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders header correctly 1`] = `
+<header
+  className="l-app-header"
+>
+  <h3>
+     Github Issues - JavaScript Frameworks
+  </h3>
+</header>
+`;

@@ -44,6 +44,11 @@ body::after {
   background-color: rgba(255, 255, 255, .9);
 }
 
+.l-error {
+  margin: 70px 20px;
+  color: #cf3838;
+}
+
 .l-issue-list-container {
   border: 1px solid #cccccc;
   width: 100%;
@@ -74,6 +79,7 @@ li {
   padding: 10px;
   display: flex;
   flex-flow: row wrap;
+  flex-wrap: wrap;
   align-items: flex-start;
   border-bottom: 1px solid #cccccc;
 }
@@ -94,6 +100,12 @@ li span.l-issue-url {
   font-style: italic;
   color: #999999;
   margin: 10px 0 0 35px;
+  width: 82%;
+  overflow-wrap: break-word;
+}
+
+li span.l-issue-url a {
+  color: #1c5be0;
 }
 
 .f-issue-status-open {

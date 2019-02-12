@@ -3,13 +3,13 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
 import './App.css';
-import AppHeader from './AppHeader.js';
-import IssueList from './IssueList.js';
+import AppHeader from './components/AppHeader.js';
+import IssueList from './components/IssueList.js';
 
 const FEED_QUERY = gql`
   {
     repository(owner:"facebook", name:"react") {
-      issues(last:20) { 
+      issues(last:20, states:[OPEN]) { 
         edges { 
           node {
             title
@@ -36,14 +36,14 @@ class App extends Component {
         <AppHeader />
         <section className="l-issues-wrapper">
           <Query query={FEED_QUERY}>
-            {({loading, error, data}) => {
-              if (loading) return <div>Fetching</div>
-              if (error) return <div>Error</div>
+            {({ loading, error, data }) => {
+              if (loading) return <div>Fetching...</div>
+              if (error) return <div className="l-error">Error</div>
               return <IssueList data={data} />
             }}
-          </Query>          
+          </Query>
         </section>
-        
+
       </div>
     );
   }
