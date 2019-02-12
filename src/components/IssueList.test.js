@@ -435,17 +435,31 @@ describe('<IssueList /> component should', () => {
     expect(issueList.props().data.repository.issues.edges).to.have.lengthOf(20);
   });
 
-  it('have right number of items in the list', () => {
+  it('have container to wrap the issue list header and issue list', () => {
+    expect(issueList.find('.l-issue-list-container')).to.have.lengthOf(1);
+  });
+
+  it('have issue list header', () => {
+    expect(issueList.find('.l-issue-list-header')).to.have.lengthOf(1);
+  });
+
+  it('have unordered list with right number of items in the list', () => {
+    expect(issueList.find('ul')).to.have.lengthOf(1);
     expect(issueList.find('li')).to.have.lengthOf(20);
   });
 
   it('have status icon for each open item in the list', () => {
-    const issueListStatus = issueList.find('.f-issue-status-open');
-    expect(issueListStatus).to.have.lengthOf(20);
+    const issueStatus = issueList.find('.f-issue-status-open');
+    expect(issueStatus).to.have.lengthOf(20);
   });
 
-  it('have a title for each open item in the list', () => {
-    const issueListTitle = issueList.find('.l-issue-title');
-    expect(issueListTitle).to.have.lengthOf(20);
+  it('have a title for each item in the list', () => {
+    const issueTitle = issueList.find('.l-issue-title');
+    expect(issueTitle).to.have.lengthOf(20);
+  });
+
+  it('have an linked URL for each item to open the issue', () => {
+    const issueURL = issueList.find('.l-issue-url');
+    expect(issueURL).to.have.lengthOf(20);
   });
 });

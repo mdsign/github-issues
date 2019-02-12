@@ -1,6 +1,6 @@
 import React from 'react';
-import AppHeader from './AppHeader.js';
 import renderer from 'react-test-renderer';
+import AppHeader from './AppHeader.js';
 
 it('renders header correctly', () => {
   const tree = renderer
