@@ -8,9 +8,16 @@ const issueStatus = (status) => {
   return (<i className={statusClassName}></i>);
 }
 
-const IssueList = ({ data }) => {
+/**
+ * IssueList displays the list of issues with status icon, title and URL to open the issue in new window
+ *
+ * @param {object} data - data from github issues from a specific repository
+ * @returns {React.Element} - issues list
+*/
+ const IssueList = ({ data }) => {
   const repoIssues = get(data, 'repository.issues.edges');
 
+  //iterate and display the repo issues in the list 
   const repoIssueList = repoIssues && repoIssues.map((item, key) =>
     <li key={key}>
       {issueStatus(item.node.state)}
